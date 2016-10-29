@@ -11,6 +11,8 @@ class Tree:
         self.root = None
 
     def addNode(self, node, key, value):
+        if self.search(value) is not None:
+            return False
         if node is None:
             self.root = TreeNode(key, value)
         else:

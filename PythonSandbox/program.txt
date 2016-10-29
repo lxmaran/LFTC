@@ -1,0 +1,6 @@
+entry_point myFirstApp
+{
+    int a = 0 ;
+    b = a + 1 ;
+    c = 'asdasd'
+}

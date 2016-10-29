@@ -5,11 +5,15 @@ tokenNames = ['string', 'int', 'const', 'entry_point', 'array', 'char', 'while',
 
 
 def populateTokenTable(listTokenNames):
-    TokenTable = [{'name': 'identifier', 'token': 0}, {'name': 'const', 'token': 1}]
+    TokenTable = [{'name': 'identifier', 'token_key': 0}, {'name': 'const', 'token_key': 1}]
 
-    for i in range(2, len(listTokenNames)):
-        TokenTable.append({'name': listTokenNames[i], 'token': i})
+    for i in range(0, len(listTokenNames)):
+        TokenTable.append({'name': listTokenNames[i], 'token_key': i+2})
     return TokenTable
 
 
-print populateTokenTable(tokenNames)
+def getTokenKeyByName(token, tokenTable):
+    for t in tokenTable:
+        if t['name'] == token:
+            return t['token_key']
+    return None
